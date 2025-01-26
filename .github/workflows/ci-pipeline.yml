@@ -39,7 +39,7 @@ jobs:
         run: mkdir -p TestResults
 
       - name: Run Unit Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
+        run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx" --collect:"XPlat Code Coverage"
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
@@ -66,6 +66,9 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu'
+          
+      - name: Ensure SonarQube Cache Directory Exists
+        run: mkdir -p ~\sonar\cache
 
       - name: Cache SonarQube Cloud packages
         uses: actions/cache@v4
