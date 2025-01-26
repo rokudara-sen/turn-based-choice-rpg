@@ -7,4 +7,16 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Game\BattleSystem\" />
+      <Folder Include="Game\WorldSystem\" />
+      <Folder Include="Models\" />
+      <Folder Include="Services\" />
+      <Folder Include="Utils\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="YamlDotNet" Version="16.3.0" />
+    </ItemGroup>
+
 </Project>
