@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  DOTNET_VERSION: '8.0.x'
+  DOTNET_VERSION: '9.0.x'
   SONAR_PROJECT_KEY: rokudara-sen_turn-based-choice-rpg
   SONAR_ORG: rokudara-sen
 
@@ -110,12 +110,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: 'csharp'
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
 
       - name: Cache NuGet packages
         uses: actions/cache@v3
