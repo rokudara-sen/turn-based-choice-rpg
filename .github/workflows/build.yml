@@ -1,0 +1,104 @@
+name: .NET CI Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  SONAR_PROJECT_KEY: rokudara-sen_turn-based-choice-rpg
+  SONAR_ORG: rokudara-sen
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for SonarCloud analysis
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build Solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: |
+            **/TestResults/*.trx
+            **/coverage.cobertura.xml
+
+  code-quality:
+    name: Code Quality (SonarCloud)
+    runs-on: windows-latest
+    needs: [build-and-test]  # Depends on build-and-test job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install SonarScanner
+        uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          args: >
+            /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+            /d:sonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
+            /d:sonar.organization=${{ env.SONAR_ORG }}
+            /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
+
+      - name: Build with SonarCloud Analysis
+        run: dotnet build --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
+  security-scan:
+    name: Security Scan (CodeQL)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'csharp'
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Cache SonarCloud
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar-${{ hashFiles('**/*.cs') }}
+          restore-keys: |
+            ${{ runner.os }}-sonar-
