@@ -34,6 +34,9 @@ jobs:
 
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore
+        
+      - name: Create TestResults Directory
+        run: mkdir -p TestResults
 
       - name: Run Unit Tests
         run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
@@ -44,8 +47,8 @@ jobs:
         with:
           name: test-results
           path: |
-            **/TestResults/*.trx
-            **/coverage.cobertura.xml
+            TestResults/test-results.trx
+            TestResults/coverage.cobertura.xml
 
   code-quality:
     name: Code Quality (SonarQube)
