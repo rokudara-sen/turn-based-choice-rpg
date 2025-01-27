@@ -17,15 +17,17 @@ jobs:
   merge-conflict-check:
     name: Merge Conflict Check
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     steps:
-      - name: Check for Merge Conflicts
-        uses: treosh/merge-conflict-check@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Pull Request Conflict Finder
+        uses: hcancelik/pr-conflict-finder@v1.0.6
         with:
-          fail: true
-          comment: true
-          check_commits: true
-  
+          secret_token: ${{ secrets.GITHUB_TOKEN }}
+          conflict_label: "Has Conflict"
+          max_tries: 5
+          wait_ms: 5000
+          
   build-and-test:
     name: Build and Test
     runs-on: windows-latest
