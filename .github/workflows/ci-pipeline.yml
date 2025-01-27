@@ -29,11 +29,11 @@ jobs:
   build-and-test:
     name: Build and Test
     runs-on: windows-latest
+    needs: [merge-conflict-check]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        needs: [merge-conflict-check]
         with:
           fetch-depth: 0
 
@@ -44,6 +44,14 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore
@@ -133,12 +141,6 @@ jobs:
         with:
           languages: 'csharp'
 
-      - name: Build Solution
-        run: dotnet build --configuration Release
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-
       - name: Cache NuGet packages
         uses: actions/cache@v3
         with:
@@ -146,6 +148,12 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+
+      - name: Build Solution
+        run: dotnet build --configuration Release
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
 
       - name: Cache SonarCloud
         uses: actions/cache@v3
@@ -159,7 +167,6 @@ jobs:
     name: Merge Approval
     runs-on: ubuntu-latest
     needs: [merge-conflict-check, build-and-test, code-quality, security-scan]
-    if: always()
     steps:
       - name: Require Success
         if: |
