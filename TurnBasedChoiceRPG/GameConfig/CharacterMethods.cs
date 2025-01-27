@@ -7,9 +7,12 @@ namespace TurnBasedChoiceRPG.GameConfig;
 
 public class CharacterMethods
 {
-    public static Character? CreateNewCharacter(string name, CharacterClasses? characterClass)
+    public static Character? CreateNewCharacter(string? name, CharacterClasses? characterClass)
     {
         if (characterClass == null)
+            return null;
+
+        if (name == null)
             return null;
         
         BaseInfo baseInfo = new BaseInfo(name, -1, -1, -1);
