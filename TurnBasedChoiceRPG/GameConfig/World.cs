@@ -47,7 +47,7 @@ public class World
         
         UtilityMethods.LoadingVisual("Initializing World");
 
-        InitializeFloorDictonary(floorCount);
+        InitializeFloorDictionary(floorCount);
         Console.Clear();
         DisplayFloor(0);
     }
@@ -64,7 +64,7 @@ public class World
         return floor;
     }
 
-    private void InitializeFloorDictonary(int floorCount)
+    private void InitializeFloorDictionary(int floorCount)
     {
         for (int i = 0; i < floorCount; i++)
         {
@@ -73,7 +73,7 @@ public class World
         }
     }
 
-    private FloorLevel RandomizeFloorTiles(FloorLevel floor)
+    private static FloorLevel RandomizeFloorTiles(FloorLevel floor)
     {
         int relicCounter = 0;
         for (int i = 0; i < floor.Height; i++)
@@ -99,7 +99,7 @@ public class World
                     floor.FloorTiles[i][j] = FloorTileType.Empty;
                 }
             }
-        };
+        }
         return floor;
     }
 }

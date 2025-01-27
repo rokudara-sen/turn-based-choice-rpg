@@ -5,10 +5,8 @@ namespace TurnBasedChoiceRPG.GameConfig;
 
 public class Game
 {
-    private readonly CharacterMethods _characterMethods;
     public Game()
     {
-        _characterMethods = new CharacterMethods();
         InitializeGame();
     }
 
@@ -24,16 +22,16 @@ public class Game
         if (playerClass is null)
             return;
         
-        _characterMethods.CreateNewCharacter(playerName, playerClass);
+        CharacterMethods.CreateNewCharacter(playerName, playerClass);
         StartGame();
     }
     
-    private void StartGame()
+    private static void StartGame()
     {
         UtilityMethods.LoadingVisual("Starting Game");
     }
 
-    private string? InsertName()
+    private static string? InsertName()
     {
         Console.Write("Please insert your player name: ");
         string? playerName = Console.ReadLine();
@@ -82,7 +80,7 @@ public class Game
         return convertedPlayerClass;
     }
 
-    private bool CheckPlayerClassSelection(string playerClass)
+    private static bool CheckPlayerClassSelection(string playerClass)
     {
         switch (playerClass)
         {
@@ -97,7 +95,7 @@ public class Game
         }
     }
 
-    private CharacterClasses? SelectClassEnum(string playerClass)
+    private static CharacterClasses? SelectClassEnum(string playerClass)
     {
         switch (playerClass)
         {
