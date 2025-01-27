@@ -52,9 +52,8 @@ public class World
         DisplayFloor(0);
     }
 
-    private FloorLevel GenerateFloor()
+    private static FloorLevel GenerateFloor()
     {
-        RandomNumberGenerator random = RandomNumberGenerator.Create();
         int floorHeight = RandomNumberGenerator.GetInt32(10, 40);
         int floorWidth = RandomNumberGenerator.GetInt32(10, 40);
         int floorRelicAmount = RandomNumberGenerator.GetInt32((floorHeight * floorWidth) / 100, (floorHeight * floorWidth) / 50);

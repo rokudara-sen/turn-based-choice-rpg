@@ -60,9 +60,12 @@ jobs:
         
       - name: Create TestResults Directory
         run: mkdir -p TestResults
+        
+      - name: List TestResults Directory
+        run: dir TestResults
 
       - name: Run Unit Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx" --collect:"XPlat Code Coverage"
+        run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx" --collect:"XPlat Code Coverage" --results-directory .
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v3

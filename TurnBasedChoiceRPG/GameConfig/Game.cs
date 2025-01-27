@@ -47,7 +47,7 @@ public class Game
         return playerName;
     }
 
-    private CharacterClasses? SelectClass()
+    private static CharacterClasses? SelectClass()
     {
         Console.WriteLine("Knight [K]\nWizard [W]\nRanger [R]\n");
         Console.Write("Please select a class: ");
