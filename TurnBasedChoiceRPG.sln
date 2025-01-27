@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnBasedChoiceRPG", "TurnBasedChoiceRPG\TurnBasedChoiceRPG.csproj", "{86F39142-FBFB-4550-AF77-42838C84277B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnBasedChoiceRPG.Tests", "TurnBasedChoiceRPG.Tests\TurnBasedChoiceRPG.Tests.csproj", "{32B889D8-FD20-4D15-92D3-1E061482ED56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,6 +14,10 @@ Global
 		{86F39142-FBFB-4550-AF77-42838C84277B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F39142-FBFB-4550-AF77-42838C84277B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F39142-FBFB-4550-AF77-42838C84277B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B889D8-FD20-4D15-92D3-1E061482ED56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B889D8-FD20-4D15-92D3-1E061482ED56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B889D8-FD20-4D15-92D3-1E061482ED56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B889D8-FD20-4D15-92D3-1E061482ED56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

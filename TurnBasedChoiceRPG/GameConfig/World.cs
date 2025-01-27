@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using TurnBasedChoiceRPG.Models;
 using TurnBasedChoiceRPG.Utils;
 using TurnBasedChoiceRPG.Utils.Enums;
@@ -46,24 +47,23 @@ public class World
         
         UtilityMethods.LoadingVisual("Initializing World");
 
-        InitializeFloorDictonary(floorCount);
+        InitializeFloorDictionary(floorCount);
         Console.Clear();
         DisplayFloor(0);
     }
 
-    private FloorLevel GenerateFloor()
+    private static FloorLevel GenerateFloor()
     {
-        Random random = new Random();
-        int floorHeight = random.Next(10, 40);
-        int floorWidth = random.Next(10, 40);
-        int floorRelicAmount = random.Next((floorHeight*floorWidth)/100, (floorHeight*floorWidth)/50);
+        int floorHeight = RandomNumberGenerator.GetInt32(10, 40);
+        int floorWidth = RandomNumberGenerator.GetInt32(10, 40);
+        int floorRelicAmount = RandomNumberGenerator.GetInt32((floorHeight * floorWidth) / 100, (floorHeight * floorWidth) / 50);
         
         FloorLevel floor = new FloorLevel(floorHeight, floorWidth, floorRelicAmount);
         floor = RandomizeFloorTiles(floor);
         return floor;
     }
 
-    private void InitializeFloorDictonary(int floorCount)
+    private void InitializeFloorDictionary(int floorCount)
     {
         for (int i = 0; i < floorCount; i++)
         {
@@ -72,15 +72,14 @@ public class World
         }
     }
 
-    private FloorLevel RandomizeFloorTiles(FloorLevel floor)
+    private static FloorLevel RandomizeFloorTiles(FloorLevel floor)
     {
         int relicCounter = 0;
         for (int i = 0; i < floor.Height; i++)
         {
             for (int j = 0; j < floor.Width; j++)
             {
-                Random random = new Random();
-                int randomTile = random.Next(1, 11);
+                int randomTile = RandomNumberGenerator.GetInt32(1, 11);
                 if (randomTile < 2 && relicCounter < floor.RelicAmount)
                 {
                     floor.FloorTiles[i][j] = FloorTileType.Relic;
@@ -99,7 +98,7 @@ public class World
                     floor.FloorTiles[i][j] = FloorTileType.Empty;
                 }
             }
-        };
+        }
         return floor;
     }
 }
