@@ -1,0 +1,17 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fcbd51ded3de5a42d033a566294ae8a738f26b5d64a542e44282caacad314f_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestProjectMapping/=86F39142_002DFBFB_002D4550_002DAF77_002D42838C84277B/@EntryIndexedValue">TurnBasedChoiceRPG.Tests</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestTemplateMapping/=NUnit3x/@EntryIndexedValue">db4927dd-2e12-48a7-9a84-2b7e3e31b9c8</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c91177e_002D86d6_002D4a19_002D8131_002D694c502984ad/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from World.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::32B889D8-FD20-4D15-92D3-1E061482ED56::net9.0::TurnBasedChoiceRPG.Tests.GameConfig.CharacterMethodsTest.CreateNewCharacter_NullName_ReturnsNull&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8328440e_002D9396_002D4c3e_002Da103_002D2b9d9cd519d9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateNewCharacter_NullName_ReturnsNull" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::32B889D8-FD20-4D15-92D3-1E061482ED56::net9.0::TurnBasedChoiceRPG.Tests.GameConfig.CharacterMethodsTest.CreateNewCharacter_NullClass_ReturnsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::32B889D8-FD20-4D15-92D3-1E061482ED56::net9.0::TurnBasedChoiceRPG.Tests.GameConfig.CharacterMethodsTest.CreateNewCharacter_NullName_ReturnsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::32B889D8-FD20-4D15-92D3-1E061482ED56::net9.0::TurnBasedChoiceRPG.Tests.GameConfig.CharacterMethodsTest.CreateNewCharacter_KnightClass_ReturnsKnight&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::32B889D8-FD20-4D15-92D3-1E061482ED56::net9.0::TurnBasedChoiceRPG.Tests.GameConfig.CharacterMethodsTest.CreateNewCharacter_NotExistingClass_ReturnsNull&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

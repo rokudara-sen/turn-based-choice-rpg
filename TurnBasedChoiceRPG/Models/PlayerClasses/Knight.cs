@@ -1,10 +1,11 @@
+using TurnBasedChoiceRPG.Models.Stats;
 using TurnBasedChoiceRPG.Utils.Enums;
 
 namespace TurnBasedChoiceRPG.Models.PlayerClasses;
 
 public class Knight : Character
 {
-    public Knight(string name) : base(name, 25, 0, 10, 6, 3, 5, 2, 3, 1, 1, CharacterClasses.Knight)
+    public Knight(BaseInfo baseInfo, BaseStats baseStats) : base(baseInfo, baseStats, 1, CharacterClasses.Knight)
     {
         SpecialAbility = PlayerClassSpecialAbility.HeavyStrike;
     }

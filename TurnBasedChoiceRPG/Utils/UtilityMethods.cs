@@ -1,6 +1,6 @@
 namespace TurnBasedChoiceRPG.Utils;
 
-public class UtilityMethods
+public static class UtilityMethods
 {
     public static void LoadingVisual(string text)
     {
