@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using TurnBasedChoiceRPG.Models;
 using TurnBasedChoiceRPG.Utils;
 using TurnBasedChoiceRPG.Utils.Enums;
@@ -53,10 +54,10 @@ public class World
 
     private FloorLevel GenerateFloor()
     {
-        Random random = new Random();
-        int floorHeight = random.Next(10, 40);
-        int floorWidth = random.Next(10, 40);
-        int floorRelicAmount = random.Next((floorHeight*floorWidth)/100, (floorHeight*floorWidth)/50);
+        RandomNumberGenerator random = RandomNumberGenerator.Create();
+        int floorHeight = RandomNumberGenerator.GetInt32(10, 40);
+        int floorWidth = RandomNumberGenerator.GetInt32(10, 40);
+        int floorRelicAmount = RandomNumberGenerator.GetInt32((floorHeight * floorWidth) / 100, (floorHeight * floorWidth) / 50);
         
         FloorLevel floor = new FloorLevel(floorHeight, floorWidth, floorRelicAmount);
         floor = RandomizeFloorTiles(floor);
@@ -79,8 +80,7 @@ public class World
         {
             for (int j = 0; j < floor.Width; j++)
             {
-                Random random = new Random();
-                int randomTile = random.Next(1, 11);
+                int randomTile = RandomNumberGenerator.GetInt32(1, 11);
                 if (randomTile < 2 && relicCounter < floor.RelicAmount)
                 {
                     floor.FloorTiles[i][j] = FloorTileType.Relic;
