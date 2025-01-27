@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Models\Monsters\" />
       <Folder Include="Services\" />
-      <Folder Include="Utils\" />
     </ItemGroup>
 
     <ItemGroup>
