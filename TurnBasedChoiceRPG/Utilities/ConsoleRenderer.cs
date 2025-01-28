@@ -1,6 +1,6 @@
-namespace TurnBasedChoiceRPG.Utils;
+namespace TurnBasedChoiceRPG.Utilities;
 
-public static class UtilityMethods
+public static class ConsoleRenderer
 {
     public static void LoadingVisual(string text)
     {

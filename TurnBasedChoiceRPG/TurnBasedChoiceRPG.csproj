@@ -8,8 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Models\Monsters\" />
-      <Folder Include="Services\" />
+      <Folder Include="Components\Character\" />
+      <Folder Include="Components\Combat\" />
+      <Folder Include="Components\Item\" />
+      <Folder Include="Systems\Battle\" />
+      <Folder Include="Systems\Character\" />
+      <Folder Include="Systems\Input\" />
     </ItemGroup>
 
     <ItemGroup>

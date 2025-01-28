@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f56a4a-6df9-4ce5-96de-694170bee833" name="Changes" comment="" />
+    <list default="true" id="39f56a4a-6df9-4ce5-96de-694170bee833" name="Changes" comment="Up to date" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,20 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.TurnBasedChoiceRPG.executor&quot;: &quot;Run&quot;,
-    &quot;1c91177e-86d6-4a19-8131-694c502984ad.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.TurnBasedChoiceRPG.executor": "Run",
+    "1c91177e-86d6-4a19-8131-694c502984ad.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="TurnBasedChoiceRPG" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -96,6 +97,7 @@
       <workItem from="1737885213611" duration="10174000" />
       <workItem from="1737967797546" duration="6517000" />
       <workItem from="1737974962793" duration="7211000" />
+      <workItem from="1737982241021" duration="223000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;&#10;-gitignore&#10;-Program.cs&#10;-Solution file.">
       <option name="closed" value="true" />
@@ -201,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737981266565</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Yes?">
+      <option name="closed" value="true" />
+      <created>1737982322800</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737982322800</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +244,7 @@
     <MESSAGE value="Unit tests" />
     <MESSAGE value="Additonal files" />
     <MESSAGE value="Some other shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some other shit" />
+    <MESSAGE value="Yes?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yes?" />
   </component>
 </project>
