@@ -1,4 +1,4 @@
-namespace TurnBasedChoiceRPG.Utils.Enums;
+namespace TurnBasedChoiceRPG.Utilities.Enums;
 
 public enum FloorTileType
 {
